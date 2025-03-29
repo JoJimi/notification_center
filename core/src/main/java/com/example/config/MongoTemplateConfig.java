@@ -19,8 +19,7 @@ public class MongoTemplateConfig {
     @Bean(name = MONGO_TEMPLATE)
     public MongoTemplate notificationMongoTemplate(
             MongoDatabaseFactory notificationMongoFactory,
-            MongoConverter mongoConverter
-    ) {
+            MongoConverter mongoConverter) {
         return new MongoTemplate(notificationMongoFactory, mongoConverter);
     }
 }

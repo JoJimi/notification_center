@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 
+@Profile("test")
 @Slf4j
 @Configuration
 public class LocalMongoConfig {
@@ -23,8 +24,7 @@ public class LocalMongoConfig {
 
     private static GenericContainer createMongoInstance() {
         return new GenericContainer(DockerImageName.parse(MONGODB_IMAGE_NAME))
-                .withExposedPorts(MONGODB_INNER_PORT)
-                .withReuse(true);
+                .withExposedPorts(MONGODB_INNER_PORT);
     }
 
     @PostConstruct
