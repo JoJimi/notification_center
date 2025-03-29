@@ -1,9 +1,15 @@
-package com.example.notification.entity;
+package com.example;
 
-import com.example.notification.type.NotificationType;
 import lombok.AllArgsConstructor;
+import org.springframework.data.annotation.PersistenceConstructor;
 
 import java.time.Instant;
+
+enum NotificationType {
+    LIKE,
+    COMMENT,
+    FOLLOW,
+}
 
 @AllArgsConstructor
 public class Notification {

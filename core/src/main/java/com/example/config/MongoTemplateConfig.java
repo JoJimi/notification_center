@@ -15,11 +15,12 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 public class MongoTemplateConfig {
 
     public static final String MONGO_TEMPLATE = "notificationMongoTemplate";
+
     @Bean(name = MONGO_TEMPLATE)
     public MongoTemplate notificationMongoTemplate(
             MongoDatabaseFactory notificationMongoFactory,
             MongoConverter mongoConverter
-    ){
+    ) {
         return new MongoTemplate(notificationMongoFactory, mongoConverter);
     }
 }

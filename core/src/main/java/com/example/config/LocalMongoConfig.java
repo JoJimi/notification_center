@@ -6,6 +6,7 @@ import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.testcontainers.containers.GenericContainer;
@@ -20,39 +21,38 @@ public class LocalMongoConfig {
     private static final String DATABASE_NAME = "notification";
     private static final GenericContainer mongo = createMongoInstance();
 
-    private static GenericContainer createMongoInstance(){
+    private static GenericContainer createMongoInstance() {
         return new GenericContainer(DockerImageName.parse(MONGODB_IMAGE_NAME))
                 .withExposedPorts(MONGODB_INNER_PORT)
                 .withReuse(true);
     }
 
     @PostConstruct
-    public void startMongo(){
-        try{
+    public void startMongo() {
+        try {
             mongo.start();
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
     }
 
     @PreDestroy
-    public void stopMongo(){
-        try{
-            mongo.stop();
-        }catch (Exception e){
+    public void stopMongo() {
+        try {
+            if (mongo.isRunning()) mongo.stop();
+        } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
     }
 
     @Bean(name = "notificationMongoFactory")
-    public MongoDatabaseFactory notificationMongoFactory(){
+    public MongoDatabaseFactory notificationMongoFactory() {
         return new SimpleMongoClientDatabaseFactory(connectionString());
     }
 
-    private ConnectionString connectionString(){
+    private ConnectionString connectionString() {
         String host = mongo.getHost();
         Integer port = mongo.getMappedPort(MONGODB_INNER_PORT);
-
         return new ConnectionString("mongodb://" + host + ":" + port + "/" + DATABASE_NAME);
     }
 }
