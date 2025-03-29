@@ -23,15 +23,19 @@ class NotificationRepositoryTest {
     private NotificationRepository sut;
 
     private final Long userId = 2L;
+    private final Long commentId = 1L;
+    private final Long writerId = 1L;
+    private final Long postId = 1L;
     private final Instant now = Instant.now();
     private final Instant ninetyDaysAfter = Instant.now().plus(90, DAYS);
 
     @Test
     void test_save() {
-        Long commentId = 1L; Long writerId = 1L; Long postId = 1L;
-        sut.save(new CommentNotification("1", userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter, postId, writerId, "comment1", commentId));
+        String id = "1";
 
-        Optional<Notification> optionalNotification = sut.findById("1");
+        sut.save(new CommentNotification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter, postId, writerId, "comment1", commentId));
+
+        Optional<Notification> optionalNotification = sut.findById(id);
 
         assertTrue(optionalNotification.isPresent());
     }
@@ -40,7 +44,7 @@ class NotificationRepositoryTest {
     void test_find_by_id(){
         String id = "2";
 
-        sut.save(new Notification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter));
+        sut.save(new CommentNotification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter, postId, writerId, "comment1", commentId));
         Optional<Notification> optionalNotification = sut.findById(id);
 
         Notification notification = optionalNotification.orElseThrow();
@@ -57,7 +61,7 @@ class NotificationRepositoryTest {
     void test_delete_by_id(){
         String id = "3";
 
-        sut.save(new Notification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter));
+        sut.save(new CommentNotification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter, postId, writerId, "comment1", commentId));
         sut.deleteById(id);
 
         Optional<Notification> optionalNotification = sut.findById(id);

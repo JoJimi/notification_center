@@ -1,7 +1,7 @@
-package org.example.api;
+package com.example.api;
 
+import com.example.event.comment.CommentEvent;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
-import org.example.event.comment.CommentEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

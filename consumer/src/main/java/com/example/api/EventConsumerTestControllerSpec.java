@@ -1,11 +1,11 @@
-package org.example.api;
+package com.example.api;
 
+import com.example.event.comment.CommentEvent;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.example.event.comment.CommentEvent;
 import org.springframework.http.MediaType;
 
 @Tag(name = "Event Consumer 호출 테스트 API")
