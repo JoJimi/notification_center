@@ -1,4 +1,4 @@
-package org.example.event;
+package org.example.event.follow;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
