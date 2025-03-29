@@ -1,4 +1,4 @@
-package org.example.event.like;
+package com.example.event.like;
 
 import lombok.Data;
 
