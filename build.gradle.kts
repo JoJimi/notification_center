@@ -13,7 +13,7 @@ java {
 ext["springCloudVersion"] = "2024.0.0"
 
 allprojects {
-    group = "org.example"
+    group = "com.example"
     version = "0.0.1-SNAPSHOT"
 
     repositories {
