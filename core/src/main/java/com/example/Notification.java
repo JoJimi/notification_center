@@ -10,7 +10,7 @@ import java.time.Instant;
 @Getter
 @AllArgsConstructor
 @Document("notifications")
-public abstract class Notification {
+public class Notification {
     private String id;
     private Long userId;
     private NotificationType type;

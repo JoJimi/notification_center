@@ -25,7 +25,9 @@ class NotificationRepositoryTest {
 
     @Test
     void test_save() {
-        sut.save(new CommentNotification("1", userId, NotificationType.LIKE, now, ninetyDaysAfter));
+        Long commentId = 1L; Long writerId = 1L; Long postId = 1L;
+        sut.save(new CommentNotification("1", userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter, postId, writerId, "comment1", commentId));
+
         Optional<Notification> optionalNotification = sut.findById("1");
 
         assertTrue(optionalNotification.isPresent());
@@ -35,14 +37,16 @@ class NotificationRepositoryTest {
     void test_find_by_id(){
         String id = "2";
 
-        sut.save(new Notification(id, userId, NotificationType.LIKE, now, ninetyDaysAfter));
+        sut.save(new Notification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter));
         Optional<Notification> optionalNotification = sut.findById(id);
 
         Notification notification = optionalNotification.orElseThrow();
-        assertEquals(notification.id, id);
-        assertEquals(notification.userId, userId);
-        assertEquals(notification.createdAt.getEpochSecond(), now.getEpochSecond());
-        assertEquals(notification.deletedAt.getEpochSecond(), ninetyDaysAfter.getEpochSecond());
+        assertEquals(notification.getId(), id);
+        assertEquals(notification.getUserId(), userId);
+        assertEquals(notification.getOccurredAt().getEpochSecond(), now.getEpochSecond());
+        assertEquals(notification.getCreatedAt().getEpochSecond(), now.getEpochSecond());
+        assertEquals(notification.getLastUpdateAt().getEpochSecond(), now.getEpochSecond());
+        assertEquals(notification.getDeletedAt().getEpochSecond(), ninetyDaysAfter.getEpochSecond());
 
     }
 
@@ -50,7 +54,7 @@ class NotificationRepositoryTest {
     void test_delete_by_id(){
         String id = "3";
 
-        sut.save(new Notification(id, userId, NotificationType.LIKE, now, ninetyDaysAfter));
+        sut.save(new Notification(id, userId, NotificationType.COMMENT, now, now, now, ninetyDaysAfter));
         sut.deleteById(id);
 
         Optional<Notification> optionalNotification = sut.findById(id);
