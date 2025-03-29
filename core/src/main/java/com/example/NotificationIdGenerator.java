@@ -1,4 +1,4 @@
-package com;
+package com.example;
 
 import org.bson.types.ObjectId;
 
