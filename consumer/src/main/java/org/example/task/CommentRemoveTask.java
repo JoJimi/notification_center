@@ -1,13 +1,16 @@
 package org.example.task;
 
-import com.example.*;
+import com.example.client.PostClient;
+import com.example.domain.NotificationType;
+import com.example.domain.Post;
+import com.example.service.NotificationGetService;
+import com.example.service.NotificationRemoveService;
 import lombok.extern.slf4j.Slf4j;
 import org.example.event.comment.CommentEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
-import java.util.Optional;
 
 @Slf4j
 @Component

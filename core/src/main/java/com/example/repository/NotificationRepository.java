@@ -1,8 +1,8 @@
 package com.example.repository;
 
 
-import com.example.Notification;
-import com.example.NotificationType;
+import com.example.domain.Notification;
+import com.example.domain.NotificationType;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;

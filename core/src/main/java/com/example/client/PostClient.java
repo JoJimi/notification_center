@@ -1,5 +1,6 @@
-package com.example;
+package com.example.client;
 
+import com.example.domain.Post;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

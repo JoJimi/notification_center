@@ -1,6 +1,8 @@
-package com.example;
+package com.example.service;
 
 
+import com.example.domain.Notification;
+import com.example.domain.NotificationType;
 import com.example.repository.NotificationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +12,11 @@ import java.util.Optional;
 
 @Slf4j
 @Component
-public class NotificationRemoveService {
+public class NotificationGetService {
     @Autowired
     private NotificationRepository repository;
 
-    public void deleteById(String id){
-        log.info("deleted: {}", id);
-        repository.deleteById(id);
+    public Optional<Notification> getNotification(NotificationType type, Long commentId){
+        return repository.findByTypeAndCommentId(type, commentId);
     }
 }

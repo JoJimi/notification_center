@@ -1,15 +1,15 @@
-package com.example;
+package com.example.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.time.Instant;
-
-@AllArgsConstructor
 @Getter
-public class Comment {
+@AllArgsConstructor
+public class Post {
+
     private Long id;
     private Long userId;
+    private String imageUrl;
     private String content;
-    private Instant createdAt;
+
 }

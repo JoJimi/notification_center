@@ -1,6 +1,10 @@
 package org.example.task;
 
-import com.example.*;
+import com.example.client.CommentClient;
+import com.example.client.PostClient;
+import com.example.domain.*;
+import com.example.service.NotificationSaveService;
+import com.example.utils.NotificationIdGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.example.event.comment.CommentEvent;
 import org.springframework.beans.factory.annotation.Autowired;

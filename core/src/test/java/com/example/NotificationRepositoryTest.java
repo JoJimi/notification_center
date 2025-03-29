@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.domain.CommentNotification;
+import com.example.domain.Notification;
+import com.example.domain.NotificationType;
 import com.example.repository.NotificationRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
