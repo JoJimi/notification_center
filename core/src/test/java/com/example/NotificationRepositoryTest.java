@@ -25,7 +25,7 @@ class NotificationRepositoryTest {
 
     @Test
     void test_save() {
-        sut.save(new Notification("1", userId, NotificationType.LIKE, now, ninetyDaysAfter));
+        sut.save(new CommentNotification("1", userId, NotificationType.LIKE, now, ninetyDaysAfter));
         Optional<Notification> optionalNotification = sut.findById("1");
 
         assertTrue(optionalNotification.isPresent());
