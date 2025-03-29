@@ -1,6 +1,7 @@
-package org.example.event;
+package org.example.event.comment;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.event.comment.CommentEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
