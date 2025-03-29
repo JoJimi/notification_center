@@ -1,12 +1,12 @@
-package org.example.task;
+package com.example.task;
 
 import com.example.client.PostClient;
 import com.example.domain.NotificationType;
 import com.example.domain.Post;
+import com.example.event.comment.CommentEvent;
 import com.example.service.NotificationGetService;
 import com.example.service.NotificationRemoveService;
 import lombok.extern.slf4j.Slf4j;
-import org.example.event.comment.CommentEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

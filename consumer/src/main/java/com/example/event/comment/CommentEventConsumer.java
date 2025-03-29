@@ -1,16 +1,15 @@
-package org.example.event.comment;
+package com.example.event.comment;
 
+import com.example.task.CommentAddTask;
 import lombok.extern.slf4j.Slf4j;
-import org.example.event.comment.CommentEvent;
-import org.example.task.CommentAddTask;
-import org.example.task.CommentRemoveTask;
+import com.example.task.CommentRemoveTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Consumer;
 
-import static org.example.event.comment.CommentEventType.*;
+import static com.example.event.comment.CommentEventType.*;
 
 @Slf4j
 @Component
