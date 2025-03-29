@@ -1,4 +1,4 @@
-package org.example.event.follow;
+package com.example.event.follow;
 
 public enum FollowEventType {
     ADD,

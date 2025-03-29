@@ -1,4 +1,4 @@
-package org.example.event.follow;
+package com.example.event.follow;
 
 import lombok.Data;
 
