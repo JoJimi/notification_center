@@ -1,5 +1,7 @@
-package com.example.domain;
+package com.example.domain.comment;
 
+import com.example.domain.notification.Notification;
+import com.example.domain.notification.NotificationType;
 import lombok.Getter;
 import org.springframework.data.annotation.TypeAlias;
 
@@ -7,7 +9,7 @@ import java.time.Instant;
 
 @Getter
 @TypeAlias("CommentNotification")
-public class CommentNotification extends Notification{
+public class CommentNotification extends Notification {
     private final Long postId;
     private final Long writerId;
     private final String comment;

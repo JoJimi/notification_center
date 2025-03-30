@@ -2,7 +2,11 @@ package com.example.task;
 
 import com.example.client.CommentClient;
 import com.example.client.PostClient;
-import com.example.domain.*;
+import com.example.domain.comment.Comment;
+import com.example.domain.comment.CommentNotification;
+import com.example.domain.notification.Notification;
+import com.example.domain.notification.NotificationType;
+import com.example.domain.post.Post;
 import com.example.service.NotificationSaveService;
 import com.example.utils.NotificationIdGenerator;
 import lombok.extern.slf4j.Slf4j;

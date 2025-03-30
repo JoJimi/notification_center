@@ -1,8 +1,8 @@
 package com.example.task;
 
 import com.example.client.PostClient;
-import com.example.domain.NotificationType;
-import com.example.domain.Post;
+import com.example.domain.notification.NotificationType;
+import com.example.domain.post.Post;
 import com.example.event.comment.CommentEvent;
 import com.example.service.NotificationGetService;
 import com.example.service.NotificationRemoveService;

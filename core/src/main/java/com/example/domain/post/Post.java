@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.domain.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,7 +1,7 @@
 package com.example.service;
 
 
-import com.example.domain.Notification;
+import com.example.domain.notification.Notification;
 import com.example.repository.NotificationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

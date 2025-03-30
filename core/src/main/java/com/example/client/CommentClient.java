@@ -1,6 +1,6 @@
 package com.example.client;
 
-import com.example.domain.Comment;
+import com.example.domain.comment.Comment;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
