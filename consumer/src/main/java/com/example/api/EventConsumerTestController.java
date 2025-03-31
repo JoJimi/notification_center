@@ -1,6 +1,7 @@
 package com.example.api;
 
 import com.example.event.comment.CommentEvent;
+import com.example.event.like.LikeEvent;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +15,18 @@ public class EventConsumerTestController implements EventConsumerTestControllerS
     @Autowired
     private Consumer<CommentEvent> comment;
 
+    @Autowired
+    private Consumer<LikeEvent> like;
+
     @Override
     @PostMapping("/test/comment")
     public void comment(@RequestBody CommentEvent event){
         comment.accept(event);
+    }
+
+    @Override
+    @PostMapping("/test/like")
+    public void like(@RequestBody LikeEvent event){
+        like.accept(event);
     }
 }
