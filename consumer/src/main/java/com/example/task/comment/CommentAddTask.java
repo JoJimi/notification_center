@@ -9,6 +9,7 @@ import com.example.domain.notification.NotificationType;
 import com.example.domain.post.Post;
 import com.example.service.NotificationSaveService;
 import com.example.utils.NotificationIdGenerator;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.example.event.comment.CommentEvent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,12 @@ import java.util.Objects;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class CommentAddTask {
 
-    @Autowired
-    PostClient postClient;
-
-    @Autowired
-    CommentClient commentClient;
-
-    @Autowired
-    NotificationSaveService saveService;
+    private final PostClient postClient;
+    private final CommentClient commentClient;
+    private final NotificationSaveService saveService;
 
     public void processEvent(CommentEvent event){
         Post post = postClient.getPost(event.getPostId());

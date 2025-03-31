@@ -9,6 +9,7 @@ import com.example.event.like.LikeEvent;
 import com.example.service.NotificationGetService;
 import com.example.service.NotificationSaveService;
 import com.example.utils.NotificationIdGenerator;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,16 +21,12 @@ import java.util.Optional;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class LikeAddTask {
 
-    @Autowired
-    private PostClient postClient;
-
-    @Autowired
-    private NotificationGetService getService;
-
-    @Autowired
-    private NotificationSaveService saveService;
+    private final PostClient postClient;
+    private final NotificationGetService getService;
+    private final NotificationSaveService saveService;
 
     public void processEvent(LikeEvent event){
         Post post = postClient.getPost(event.getPostId());

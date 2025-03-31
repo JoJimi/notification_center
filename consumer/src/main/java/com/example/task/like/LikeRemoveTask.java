@@ -1,13 +1,12 @@
 package com.example.task.like;
 
-import com.example.client.PostClient;
 import com.example.domain.like.LikeNotification;
 import com.example.domain.notification.Notification;
-import com.example.domain.notification.NotificationType;
 import com.example.event.like.LikeEvent;
 import com.example.service.NotificationGetService;
 import com.example.service.NotificationRemoveService;
 import com.example.service.NotificationSaveService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,16 +18,12 @@ import static com.example.domain.notification.NotificationType.*;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class LikeRemoveTask {
 
-    @Autowired
-    private NotificationGetService getService;
-
-    @Autowired
-    private NotificationRemoveService removeService;
-
-    @Autowired
-    private NotificationSaveService saveService;
+    private final NotificationGetService getService;
+    private final NotificationRemoveService removeService;
+    private final NotificationSaveService saveService;
 
     public void processEvent(LikeEvent event){
         Optional<Notification> optionalNotification = getService.getNotificationByTypeAndPostId(LIKE, event.getPostId());
