@@ -2,6 +2,7 @@ package com.example.event.like;
 
 import com.example.task.like.LikeAddTask;
 import com.example.task.like.LikeRemoveTask;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,13 +14,11 @@ import static com.example.event.like.LikeEventType.*;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class LikeEventConsumer {
 
-    @Autowired
-    private LikeAddTask likeAddTask;
-
-    @Autowired
-    private LikeRemoveTask likeRemoveTask;
+    private final LikeAddTask likeAddTask;
+    private final LikeRemoveTask likeRemoveTask;
 
     @Bean("like")
     public Consumer<LikeEvent> like() {

@@ -1,6 +1,7 @@
 package com.example.event.comment;
 
 import com.example.task.comment.CommentAddTask;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.example.task.comment.CommentRemoveTask;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +14,11 @@ import static com.example.event.comment.CommentEventType.*;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class CommentEventConsumer {
 
-    @Autowired
-    CommentAddTask commentAddTask;
-
-    @Autowired
-    CommentRemoveTask commentRemoveTask;
+    private final CommentAddTask commentAddTask;
+    private final CommentRemoveTask commentRemoveTask;
 
     @Bean("comment")
     public Consumer<CommentEvent> comment() {
