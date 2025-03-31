@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+import static com.example.domain.notification.NotificationType.*;
+
 @Slf4j
 @Component
 @AllArgsConstructor
@@ -28,10 +30,9 @@ public class CommentRemoveTask {
             return;
         }
 
-        getService.getNotificationByTypeAndCommentId(NotificationType.COMMENT, event.getCommentId())
-                .ifPresentOrElse(
-                        notification -> removeService.deleteById(notification.getId()),
-                                () -> log.error("Notification not found")
+        getService.getNotificationByTypeAndCommentId(COMMENT, event.getCommentId())
+                .ifPresent(
+                        notification -> removeService.deleteById(notification.getId())
                 );
     }
 }
