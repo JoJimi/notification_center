@@ -1,6 +1,7 @@
 package com.example.api;
 
 import com.example.event.comment.CommentEvent;
+import com.example.event.follow.FollowEvent;
 import com.example.event.like.LikeEvent;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ public class EventConsumerTestController implements EventConsumerTestControllerS
 
     private final Consumer<CommentEvent> comment;
     private final Consumer<LikeEvent> like;
+    private final Consumer<FollowEvent> follow;
 
     @Override
     @PostMapping("/test/comment")
@@ -22,10 +24,16 @@ public class EventConsumerTestController implements EventConsumerTestControllerS
         comment.accept(event);
     }
 
-    // LikeEventConsumer에서의 Bean 처리한 like() 함수가 실행된다
+    // LikeEventConsumer에서 Bean 처리한 like() 함수가 실행된다
     @Override
     @PostMapping("/test/like")
     public void like(@RequestBody LikeEvent event){
         like.accept(event);
+    }
+
+    @Override
+    @PostMapping("/test/follow")
+    public void follow(@RequestBody FollowEvent event){
+        follow.accept(event);
     }
 }
