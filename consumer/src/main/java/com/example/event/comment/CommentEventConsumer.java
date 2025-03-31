@@ -1,8 +1,8 @@
 package com.example.event.comment;
 
-import com.example.task.CommentAddTask;
+import com.example.task.comment.CommentAddTask;
 import lombok.extern.slf4j.Slf4j;
-import com.example.task.CommentRemoveTask;
+import com.example.task.comment.CommentRemoveTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

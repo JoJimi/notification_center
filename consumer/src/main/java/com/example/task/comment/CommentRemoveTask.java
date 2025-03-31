@@ -1,4 +1,4 @@
-package com.example.task;
+package com.example.task.comment;
 
 import com.example.client.PostClient;
 import com.example.domain.notification.NotificationType;
