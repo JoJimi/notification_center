@@ -7,7 +7,7 @@ import java.time.Instant;
 @Data
 public class LikeEvent {
     private LikeEventType type;
-    private long postId;
-    private long userId;
+    private Long postId;
+    private Long userId;
     private Instant createdAt;
 }
