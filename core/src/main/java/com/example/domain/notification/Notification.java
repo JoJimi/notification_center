@@ -3,6 +3,8 @@ package com.example.domain.notification;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.time.Instant;
 
@@ -10,6 +12,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @Document("notifications")
 public abstract class Notification {
+    @Field(targetType = FieldType.STRING)
     private String id;
     private Long userId;
     private NotificationType type;
