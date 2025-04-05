@@ -17,7 +17,7 @@ import java.util.List;
 
 @Component
 @AllArgsConstructor
-public class GetUserNotificationService {
+public class GetUserNotificationsService {
 
     private final NotificationListService listService;
     private final CommentUserNotificationConvertor commentConvertor;
