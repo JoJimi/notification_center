@@ -1,5 +1,6 @@
-package com.example;
+package com.example.repository;
 
+import com.example.IntegrationTest;
 import com.example.domain.comment.CommentNotification;
 import com.example.domain.notification.Notification;
 import com.example.domain.notification.NotificationType;
@@ -15,9 +16,8 @@ import java.util.Optional;
 import static java.time.temporal.ChronoUnit.DAYS;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootApplication
-@SpringBootTest
-class NotificationRepositoryTest {
+
+class NotificationRepositoryTest extends IntegrationTest {
 
     @Autowired
     private NotificationRepository sut;
@@ -67,5 +67,7 @@ class NotificationRepositoryTest {
         Optional<Notification> optionalNotification = sut.findById(id);
         assertFalse(optionalNotification.isPresent());
     }
+
+
 
 }
