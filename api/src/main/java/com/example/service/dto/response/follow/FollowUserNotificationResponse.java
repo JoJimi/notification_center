@@ -19,13 +19,14 @@ public class FollowUserNotificationResponse extends UserNotificationResponse {
     private final String userProfileImageUrl;
 
     @Schema(description = "팔로우 여부")
-    private final boolean isFollowing;
+    private final boolean following;
 
-    public FollowUserNotificationResponse(String id, NotificationType type, Instant occurredAt, String userName, String userProfileImageUrl, boolean isFollowing) {
+    public FollowUserNotificationResponse(String id, NotificationType type, Instant occurredAt, String userName,
+                                          String userProfileImageUrl, boolean following) {
         super(id, type, occurredAt);
         this.userName = userName;
         this.userProfileImageUrl = userProfileImageUrl;
-        this.isFollowing = isFollowing;
+        this.following = following;
     }
 
     public static FollowUserNotificationResponse of(ConvertedFollowNotification notification){

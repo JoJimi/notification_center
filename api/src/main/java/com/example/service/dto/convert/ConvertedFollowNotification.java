@@ -9,13 +9,13 @@ import java.time.Instant;
 public class ConvertedFollowNotification extends ConvertedNotification{
     private final String userName;
     private final String userProfileImageUrl;
-    private final boolean isFollowing;
+    private final boolean following;
 
     public ConvertedFollowNotification(String id, NotificationType type, Instant occurredAt, Instant lastUpdatedAt,
-                                       String userName, String userProfileImageUrl, boolean isFollowing) {
+                                       String userName, String userProfileImageUrl, boolean following) {
         super(id, type, occurredAt, lastUpdatedAt);
         this.userName = userName;
         this.userProfileImageUrl = userProfileImageUrl;
-        this.isFollowing = isFollowing;
+        this.following = following;
     }
 }
