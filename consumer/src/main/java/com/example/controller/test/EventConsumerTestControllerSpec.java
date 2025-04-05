@@ -1,4 +1,4 @@
-package com.example.api;
+package com.example.controller.test;
 
 import com.example.event.comment.CommentEvent;
 import com.example.event.follow.FollowEvent;
