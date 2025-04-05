@@ -13,6 +13,7 @@ public class ConvertedFollowNotification extends ConvertedNotification{
 
     public ConvertedFollowNotification(String id, NotificationType type, Instant occurredAt, Instant lastUpdatedAt,
                                        String userName, String userProfileImageUrl, boolean following) {
+
         super(id, type, occurredAt, lastUpdatedAt);
         this.userName = userName;
         this.userProfileImageUrl = userProfileImageUrl;
