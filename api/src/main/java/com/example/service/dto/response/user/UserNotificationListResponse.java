@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserNotificationListResponse {
 
-    private List<UserNotificationListResponse> notifications;
+    private List<UserNotificationResponse> notifications;
     private boolean hasNext;
     private Instant pivot;
 
