@@ -21,7 +21,7 @@ public class LikeUserNotificationResponse extends UserNotificationResponse {
     @Schema(description = "좋아요한 사용자 총 개수")
     private final long userCount;
 
-    @Schema(description = "좋아요한 사용자 프로필 이미지")
+    @Schema(description = "좋아요한 게시글 이미지")
     private final String postImageUrl;
 
     public LikeUserNotificationResponse(String id, NotificationType type, Instant occurredAt, String userName,
