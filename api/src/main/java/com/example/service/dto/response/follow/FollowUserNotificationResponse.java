@@ -1,9 +1,8 @@
 package com.example.service.dto.response.follow;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.ConvertedFollowNotification;
+import com.example.service.dto.convert.ConvertedFollowNotification;
 import com.example.service.dto.response.user.UserNotificationResponse;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.Instant;

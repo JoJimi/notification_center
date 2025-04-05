@@ -2,12 +2,10 @@ package com.example.service.convertor;
 
 import com.example.client.PostClient;
 import com.example.client.UserClient;
-import com.example.domain.comment.CommentNotification;
 import com.example.domain.like.LikeNotification;
 import com.example.domain.post.Post;
 import com.example.domain.user.User;
-import com.example.service.dto.ConvertedCommentNotification;
-import com.example.service.dto.ConvertedLikeNotification;
+import com.example.service.dto.convert.ConvertedLikeNotification;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

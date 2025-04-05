@@ -1,7 +1,7 @@
 package com.example.service.dto.response.comment;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.ConvertedCommentNotification;
+import com.example.service.dto.convert.ConvertedCommentNotification;
 import com.example.service.dto.response.user.UserNotificationResponse;
 import lombok.Getter;
 

@@ -1,5 +1,6 @@
 package com.example.service.dto;
 
+import com.example.service.dto.convert.ConvertedNotification;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

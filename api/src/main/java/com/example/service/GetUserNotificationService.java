@@ -7,14 +7,13 @@ import com.example.dto.GetUserNotificationsByPivotResult;
 import com.example.service.convertor.CommentUserNotificationConvertor;
 import com.example.service.convertor.FollowUserNotificationConvertor;
 import com.example.service.convertor.LikeUserNotificationConvertor;
-import com.example.service.dto.ConvertedNotification;
+import com.example.service.dto.convert.ConvertedNotification;
 import com.example.service.dto.GetUserNotificationsResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor

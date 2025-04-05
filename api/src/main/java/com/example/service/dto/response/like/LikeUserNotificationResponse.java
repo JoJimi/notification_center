@@ -1,7 +1,7 @@
 package com.example.service.dto.response.like;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.ConvertedLikeNotification;
+import com.example.service.dto.convert.ConvertedLikeNotification;
 import com.example.service.dto.response.user.UserNotificationResponse;
 import lombok.Getter;
 
