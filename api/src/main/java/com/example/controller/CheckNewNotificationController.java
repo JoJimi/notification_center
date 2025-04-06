@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/v1/user-notifications")
-public class CheckNewNotificationController {
+public class CheckNewNotificationController implements CheckNewNotificationControllerSpec{
 
     private final CheckNewNotificationService service;
 
+    @Override
     @GetMapping("/{userId}/new")
     public CheckNewNotificationResponse checkNew(
             @PathVariable(value = "userId") Long userId
