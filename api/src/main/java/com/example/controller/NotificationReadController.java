@@ -13,9 +13,10 @@ import java.time.Instant;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/v1/user-notification")
-public class NotificationReadController {
+public class NotificationReadController implements NotificationReadControllerSpec{
     private final LastReadAtService service;
 
+    @Override
     @PutMapping("/{userId}/read")
     public SetLastReadAtResponse setLastReadAt(
             @PathVariable Long userId){
