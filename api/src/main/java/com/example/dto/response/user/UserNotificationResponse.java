@@ -1,13 +1,13 @@
-package com.example.service.dto.response.user;
+package com.example.dto.response.user;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.convert.ConvertedCommentNotification;
-import com.example.service.dto.convert.ConvertedFollowNotification;
-import com.example.service.dto.convert.ConvertedLikeNotification;
-import com.example.service.dto.convert.ConvertedNotification;
-import com.example.service.dto.response.comment.CommentUserNotificationResponse;
-import com.example.service.dto.response.follow.FollowUserNotificationResponse;
-import com.example.service.dto.response.like.LikeUserNotificationResponse;
+import com.example.dto.convert.ConvertedCommentNotification;
+import com.example.dto.convert.ConvertedLikeNotification;
+import com.example.dto.convert.ConvertedNotification;
+import com.example.dto.response.comment.CommentUserNotificationResponse;
+import com.example.dto.response.follow.FollowUserNotificationResponse;
+import com.example.dto.response.like.LikeUserNotificationResponse;
+import com.example.dto.convert.ConvertedFollowNotification;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

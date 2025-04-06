@@ -1,4 +1,4 @@
-package com.example.service.dto.convert;
+package com.example.dto.convert;
 
 import com.example.domain.notification.NotificationType;
 import lombok.Getter;

@@ -1,8 +1,8 @@
-package com.example.service.dto.response.follow;
+package com.example.dto.response.follow;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.convert.ConvertedFollowNotification;
-import com.example.service.dto.response.user.UserNotificationResponse;
+import com.example.dto.convert.ConvertedFollowNotification;
+import com.example.dto.response.user.UserNotificationResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 

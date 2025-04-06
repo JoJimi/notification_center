@@ -1,7 +1,7 @@
-package com.example.service.controller;
+package com.example.controller;
 
 import com.example.service.GetUserNotificationsService;
-import com.example.service.dto.response.user.UserNotificationListResponse;
+import com.example.dto.response.user.UserNotificationListResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

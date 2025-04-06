@@ -1,9 +1,9 @@
-package com.example.service.convertor;
+package com.example.convertor;
 
 import com.example.client.UserClient;
 import com.example.domain.follow.FollowNotification;
 import com.example.domain.user.User;
-import com.example.service.dto.convert.ConvertedFollowNotification;
+import com.example.dto.convert.ConvertedFollowNotification;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.example.service.dto.response.user;
+package com.example.dto.response.user;
 
-import com.example.service.dto.GetUserNotificationsResult;
+import com.example.dto.GetUserNotificationsResult;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

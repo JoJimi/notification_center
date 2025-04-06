@@ -1,8 +1,8 @@
-package com.example.service.dto.response.comment;
+package com.example.dto.response.comment;
 
 import com.example.domain.notification.NotificationType;
-import com.example.service.dto.convert.ConvertedCommentNotification;
-import com.example.service.dto.response.user.UserNotificationResponse;
+import com.example.dto.convert.ConvertedCommentNotification;
+import com.example.dto.response.user.UserNotificationResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 

@@ -1,14 +1,10 @@
-package com.example.service.controller;
+package com.example.controller;
 
 
-import com.example.service.dto.response.user.UserNotificationListResponse;
+import com.example.dto.response.user.UserNotificationListResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.MediaType;
 
 import java.time.Instant;
 

@@ -4,11 +4,11 @@ import com.example.domain.comment.CommentNotification;
 import com.example.domain.follow.FollowNotification;
 import com.example.domain.like.LikeNotification;
 import com.example.dto.GetUserNotificationsByPivotResult;
-import com.example.service.convertor.CommentUserNotificationConvertor;
-import com.example.service.convertor.FollowUserNotificationConvertor;
-import com.example.service.convertor.LikeUserNotificationConvertor;
-import com.example.service.dto.convert.ConvertedNotification;
-import com.example.service.dto.GetUserNotificationsResult;
+import com.example.convertor.CommentUserNotificationConvertor;
+import com.example.convertor.FollowUserNotificationConvertor;
+import com.example.convertor.LikeUserNotificationConvertor;
+import com.example.dto.convert.ConvertedNotification;
+import com.example.dto.GetUserNotificationsResult;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

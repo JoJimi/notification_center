@@ -1,4 +1,4 @@
-package com.example.service.dto.convert;
+package com.example.dto.convert;
 
 import com.example.domain.notification.NotificationType;
 import lombok.Getter;
@@ -6,18 +6,18 @@ import lombok.Getter;
 import java.time.Instant;
 
 @Getter
-public class ConvertedCommentNotification extends ConvertedNotification{
+public class ConvertedLikeNotification extends ConvertedNotification{
     private final String userName;
     private final String userProfileImageUrl;
-    private final String comment;
+    private final long userCount;
     private final String postImageUrl;
 
-    public ConvertedCommentNotification(String id, NotificationType type, Instant occurredAt, Instant lastUpdatedAt,
-                                        String userName, String userProfileImageUrl, String comment, String postImageUrl) {
+    public ConvertedLikeNotification(String id, NotificationType type, Instant occurredAt, Instant lastUpdatedAt,
+                                     String userName, String userProfileImageUrl, long userCount, String postImageUrl) {
         super(id, type, occurredAt, lastUpdatedAt);
         this.userName = userName;
         this.userProfileImageUrl = userProfileImageUrl;
-        this.comment = comment;
+        this.userCount = userCount;
         this.postImageUrl = postImageUrl;
     }
 }
