@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 
+@Profile("test")
 @Slf4j
 @Configuration
 public class LocalMongoConfig {

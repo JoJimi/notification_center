@@ -12,8 +12,8 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.utility.DockerImageName;
 
+@Profile("test")
 @Slf4j
-@Profile("redis")   // redis는 api 모듈에서만 필요하기 때문에 이를 설정하기 위해 profile 사용
 @Configuration
 public class LocalRedisConfig {
 
@@ -22,28 +22,28 @@ public class LocalRedisConfig {
     private GenericContainer redis;
 
     @PostConstruct
-    public void startRedis(){
-        try{
+    public void startRedis() {
+        try {
             redis = new GenericContainer(DockerImageName.parse(IMAGE)).withExposedPorts(PORT);
             redis.start();
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
     }
+
     @PreDestroy
     public void stopRedis() {
-        try{
+        try {
             redis.stop();
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
     }
 
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory(){
+    @Bean(name = "redisConnectionFactory")
+    public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration redisStandaloneConfiguration =
                 new RedisStandaloneConfiguration(redis.getHost(), redis.getMappedPort(PORT));
-
         return new LettuceConnectionFactory(redisStandaloneConfiguration);
     }
 }
