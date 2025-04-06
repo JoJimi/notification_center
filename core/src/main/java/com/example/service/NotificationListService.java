@@ -38,5 +38,5 @@ public class NotificationListService {
     }
 
     // 클라이언트와 협의가 필요한 부분
-    private static final int PAGE_SIZE = 20;
+    private static final int PAGE_SIZE = 3;
 }
