@@ -3,7 +3,7 @@
 - 알림 종류: 게시물 댓글 알림, 게시물 좋아요 알림, 팔로우 알림
 
 ## 사용 기술
-- Java, Spring Boot, Kafka, Redis, Docker Compose, Junit5, Test Container
+- Java, Spring Boot, Kafka, Redis, Docker, Junit5, Swagger, Test Container
 
 ## MongoDB Index
 | 인덱스 생성 쿼리                                                                                               | 설명                                                      |
