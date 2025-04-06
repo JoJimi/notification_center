@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
 import java.util.Optional;
 
 @Slf4j
@@ -28,5 +29,12 @@ public class NotificationGetService {
 
     public Optional<Notification> getNotificationByTypeAndUserIdAndFollowerId(NotificationType type, Long userId, Long followerId){
         return repository.findByTypeAndUserIdAndFollowerId(type, userId, followerId);
+    }
+
+    public Instant getLatestUpdatedAt(Long userId){
+        Optional<Notification> notification = repository.findFirstByUserIdOrderByLastUpdateAtDesc(userId);
+
+        return notification.map(Notification::getLastUpdateAt).orElse(null);
+
     }
 }
